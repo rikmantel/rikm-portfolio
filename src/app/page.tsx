@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 export default function Home() {
   return (
     <div className="px-6 md:px-12 max-w-screen-2xl mx-auto">
-      <section className="pt-20 md:pt-8 pb-20">
+      <section className="pt-8 md:pt-8 pb-20">
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-stone-900 max-w-7xl text-balance">
           Rik Mantel is a product designer in Vancouver, BC.
         </h1>
