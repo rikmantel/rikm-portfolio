@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useChat } from "./ChatContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { MessageCircle } from "lucide-react";
 
 const CHIPS_BY_ROUTE: Record<string, string[]> = {
     "/": ["About Rik", "Design Philosophy", "Current Role"],
@@ -62,8 +63,13 @@ export function ChatChips() {
                         animate="visible"
                         exit="exit"
                         onClick={() => sendMessage(chip)}
-                        className="px-3.5 py-1.5 bg-stone-100 border border-stone-200  rounded-full text-xs font-medium text-stone-500 hover:bg-stone-100 hover:text-stone-600 cursor-pointer pointer-events-auto transition-colors duration-200"
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 border border-stone-200  rounded-full text-xs font-medium text-stone-500 hover:bg-stone-100 hover:text-stone-600 hover:border-stone-300 cursor-pointer pointer-events-auto transition-colors duration-200"
+
                     >
+                        <MessageCircle
+                            size={12}
+                            className="opacity-60 inline-flex items-center justify-center translate-y-[-0.75px]"
+                        />
                         {chip}
                     </motion.button>
                 ))}
