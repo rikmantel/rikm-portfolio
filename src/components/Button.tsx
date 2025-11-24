@@ -36,7 +36,7 @@ export function Button({
 
     const sizeClasses = {
         sm: "px-4 min-h-[44px] min-w-[110px] text-sm rounded-2xl",
-        md: "px-5 min-h-[54px] min-w-[130px] text-base rounded-2xl",
+        md: "px-5 min-h-[54px] min-w-[120px] text-base rounded-2xl",
     };
 
 
@@ -48,7 +48,7 @@ export function Button({
     );
 
     const label = (
-        <span className="transition-transform duration-200 group-hover:-translate-x-2">
+        <span className="transition-transform duration-200 group-hover:-translate-x-3">
             {children}
         </span>
     );

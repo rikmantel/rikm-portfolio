@@ -27,7 +27,7 @@ export function ChatPanel() {
             <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-stone-100">
-                    <h2 className="font-serif text-xl italic text-stone-800">Assistant</h2>
+                    <h2 className="font-serif text-xl text-stone-800">Chat</h2>
                     <button
                         onClick={() => setIsOpen(false)}
                         className="p-2 hover:bg-stone-100 rounded-full transition-colors text-stone-500"
@@ -79,11 +79,11 @@ export function ChatPanel() {
                 </div>
 
                 {/* Input Area */}
-                <div className="p-4 border-t border-stone-100 bg-white">
+                <div className="p-4 border-stone-100 border-t bg-white">
                     <AnimatePresence>
                         {isOpen && (
                             <ChatInput
-                                className="w-full rounded-full"
+                                // className="w-full rounded-full"
                                 autoFocus
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}

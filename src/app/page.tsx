@@ -1,24 +1,34 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/Button";
 
 export default function Home() {
   return (
     <div className="px-6 md:px-12 max-w-screen-2xl mx-auto">
       <section className="pt-8 md:pt-8 pb-20">
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-stone-900 max-w-7xl text-balance">
-          Rik Mantel is a product designer in Vancouver, BC.
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.075] text-stone-900 max-w-7xl text-balance">
+          Rik Mantel is a product designer in Vancouver, BC
         </h1>
-        <p className="mt-8 text-lg md:text-xl text-stone-600 max-w-2xl leading-relaxed">
-          Currently at Jobber, designing for the service pros that keep our homes running. Previously Shopify and Morgan Stanley.        </p>
+        <p className="mt-8 text-lg md:text-l text-stone-600 max-w-2xl text-balance">
+          Rik is currently at Jobber, designing for the service professionals that keep our homes running. Previously Shopify and Morgan Stanley.</p>
       </section>
 
       <section>
-        <div className="flex items-baseline justify-between mb-12">
+        <div className="flex items-baseline justify-between mb-8">
           <h2 className="font-mono text-xs uppercase tracking-widest text-stone-500">Selected Work</h2>
-          <Link href="/work" className="group flex items-center text-sm font-medium text-stone-900 hover:text-stone-600 transition-colors">
+          {/* <Link href="/work" className="group flex items-center text-sm font-medium text-stone-900 hover:text-stone-600 transition-colors">
             View all
             <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </Link> */}
+
+          <Button
+            href="/work"
+            variant="secondary"
+            size="sm"
+            className="tracking-normal font-sans normal-case"
+          >
+            View all
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
@@ -37,10 +47,10 @@ export default function Home() {
             }
           ].map((project) => (
             <Link key={project.slug} href={`/work/${project.slug}`} className="group block">
-              <div className="aspect-[4/3] bg-stone-200 rounded-sm mb-6 overflow-hidden relative">
-                <div className="absolute inset-0 bg-stone-300 group-hover:bg-stone-400 transition-colors duration-500" />
+              <div className="aspect-[4/3] bg-stone-200 rounded-3xl mb-6 overflow-hidden relative">
+                <div className="absolute inset-0 bg-stone-200 group-hover:bg-stone-300 transition-colors duration-500" />
                 {/* Placeholder for image */}
-                <div className="absolute inset-0 flex items-center justify-center text-stone-400 opacity-50 font-mono text-xs uppercase">
+                <div className="absolute inset-0 flex items-center justify-center text-stone-900 opacity-50 font-mono text-xs uppercase">
                   Project Image
                 </div>
               </div>

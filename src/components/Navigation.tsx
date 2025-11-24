@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./Button";
+import { Mails } from "lucide-react";
 
 export function Navigation() {
     return (
@@ -9,9 +10,8 @@ export function Navigation() {
                 Rik Mantel
             </Link>
 
-            <div className="flex items-center space-x-6 md:space-x-8">
-                {/* nav links only */}
-                <div className="flex items-center space-x-6 md:space-x-8 font-mono text-xs md:text-sm tracking-widest uppercase text-stone-500">
+            <div className="flex items-center space-x-6 md:space-x-10">
+                <div className="flex items-center space-x-6 md:space-x-12 font-sans text-sm md:text-base text-stone-500">
                     <Link href="/work" className="hover:text-stone-900 transition-colors">
                         Work
                     </Link>
@@ -20,12 +20,12 @@ export function Navigation() {
                     </Link>
                 </div>
 
-                {/* keep the button clean */}
                 <Button
-                    href="mailto:hello@example.com"
+                    href="mailto:mantel.rik@gmail.com"
                     variant="primary"
-                    size="sm"
+                    size="md"
                     className="tracking-normal font-sans normal-case"
+                    icon={<Mails size={16} />}
                 >
                     Contact
                 </Button>
