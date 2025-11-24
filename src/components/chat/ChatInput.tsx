@@ -46,12 +46,18 @@ export function ChatInput({ className, autoFocus, ...props }: ChatInputProps) {
         <motion.form
             onSubmit={handleSubmit}
             className={clsx(
-                "bg-white border border-stone-200 shadow-lg flex items-center p-2 pl-6 transition-shadow duration-300 focus-within:shadow-xl focus-within:border-stone-300hover:shadow-md w-full max-w-xl pointer-events-auto rounded-2xl"
+                "bg-white border border-stone-200 flex items-center p-2 pl-6 w-full max-w-xl pointer-events-auto rounded-2xl"
                 ,
                 className
             )}
             {...props}
         >
+
+            {/* className={clsx(
+                "bg-white border border-stone-200 shadow-lg flex items-center p-2 pl-6 transition-shadow duration-300 focus-within:shadow-xl focus-within:border-stone-300hover:shadow-md w-full max-w-xl pointer-events-auto rounded-2xl"
+                ,
+                className
+            )} */}
             <input
                 type="text"
                 value={inputValue}
