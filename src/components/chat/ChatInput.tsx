@@ -11,35 +11,15 @@ interface ChatInputProps extends React.ComponentProps<typeof motion.form> {
 }
 
 export function ChatInput({ className, autoFocus, ...props }: ChatInputProps) {
-    const { setIsOpen, addMessage, setIsLoading, isLoading, inputValue, setInputValue } = useChat();
+    const { sendMessage, isLoading, inputValue, setInputValue } = useChat();
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (!inputValue.trim() || isLoading) return;
 
-        const userMessage = inputValue.trim();
+        const message = inputValue.trim();
         setInputValue("");
-        setIsOpen(true);
-        addMessage({ role: "user", content: userMessage });
-        setIsLoading(true);
-
-        try {
-            const res = await fetch("/api/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userMessage }),
-            });
-
-            if (!res.ok) throw new Error("Failed to fetch");
-
-            const data = await res.json();
-            addMessage({ role: "assistant", content: data.content });
-        } catch (error) {
-            console.error(error);
-            addMessage({ role: "assistant", content: "Sorry, something went wrong. Please try again." });
-        } finally {
-            setIsLoading(false);
-        }
+        await sendMessage(message);
     };
 
     return (

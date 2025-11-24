@@ -2,6 +2,7 @@
 
 import { useChat } from "./ChatContext";
 import { ChatInput } from "./ChatInput";
+import { ChatChips } from "./ChatChips";
 import { AnimatePresence, motion } from "framer-motion";
 
 {/* className={clsx(
@@ -25,8 +26,8 @@ export function ChatBar() {
                         className="relative h-32 flex items-end justify-center pb-6"
                     >
                         <div className="absolute inset-0 bg-gradient-to-t from-stone-50/90 via-stone-50/40 to-transparent backdrop-blur-md [mask-image:linear-gradient(to_top,black_40%,transparent)] pointer-events-none" />
-                        <div className="relative w-full max-w-4xl px-4 flex justify-center pointer-events-auto">
-
+                        <div className="relative w-full max-w-xl px-4 flex flex-col items-start justify-end pointer-events-auto">
+                            <ChatChips />
                             <ChatInput
                                 className="w-full max-w-xl bg-white shadow-2xl transition-shadow duration-300 rounded-2xl"
                                 autoFocus={false}

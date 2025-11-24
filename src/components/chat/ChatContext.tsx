@@ -16,6 +16,7 @@ interface ChatContextType {
     setIsLoading: (loading: boolean) => void;
     inputValue: string;
     setInputValue: (value: string) => void;
+    sendMessage: (content: string) => Promise<void>;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -30,6 +31,32 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         setMessages((prev) => [...prev, message]);
     };
 
+    const sendMessage = async (content: string) => {
+        if (!content.trim() || isLoading) return;
+
+        setIsOpen(true);
+        addMessage({ role: "user", content });
+        setIsLoading(true);
+
+        try {
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: content }),
+            });
+
+            if (!res.ok) throw new Error("Failed to fetch");
+
+            const data = await res.json();
+            addMessage({ role: "assistant", content: data.content });
+        } catch (error) {
+            console.error(error);
+            addMessage({ role: "assistant", content: "Sorry, something went wrong. Please try again." });
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <ChatContext.Provider
             value={{
@@ -41,6 +68,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
                 setIsLoading,
                 inputValue,
                 setInputValue,
+                sendMessage,
             }}
         >
             {children}
