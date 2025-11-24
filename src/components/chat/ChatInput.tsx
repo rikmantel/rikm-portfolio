@@ -62,7 +62,7 @@ export function ChatInput({ className, autoFocus, ...props }: ChatInputProps) {
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask anything..."
+                placeholder="Ask anything"
                 autoFocus={autoFocus}
                 className="flex-1 bg-transparent border-none outline-none text-stone-800 placeholder:text-stone-400 font-sans text-base min-w-0"
             />
