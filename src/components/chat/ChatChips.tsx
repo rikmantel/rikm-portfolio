@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useChat } from "./ChatContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const CHIPS_BY_ROUTE: Record<string, string[]> = {
@@ -11,7 +11,7 @@ const CHIPS_BY_ROUTE: Record<string, string[]> = {
     "/work": ["Design Process", "Recent Projects", "Collaboration Style"],
 };
 
-const chipVariants = {
+const chipVariants: Variants = {
     hidden: { opacity: 0, x: 6 },
     visible: (index: number) => ({
         opacity: 1,
