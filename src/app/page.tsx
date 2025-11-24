@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/Button";
+import { JobberIcon } from "@/components/icons/JobberIcon";
 
 export default function Home() {
   return (
@@ -9,8 +10,8 @@ export default function Home() {
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.075] text-stone-900 max-w-7xl text-balance">
           Rik Mantel is a product designer in Vancouver, BC
         </h1>
-        <p className="mt-8 text-lg md:text-l text-stone-600 max-w-2xl text-balance">
-          Rik is currently at Jobber, designing for the service professionals that keep our homes running. Previously Shopify and Morgan Stanley.</p>
+        <p className="mt-8 text-lg md:text-xl text-stone-600 max-w-2xl text-balance">
+          Rik is currently at <JobberIcon className="text-stone-600 inline-block h-[0.8em] w-auto align-baseline translate-y-[1px] ml-[4px] mr-[-1px]" /> Jobber, designing for the service professionals that keep our homes running. Previously Shopify and Morgan Stanley.</p>
       </section>
 
       <section>
