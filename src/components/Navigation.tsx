@@ -4,9 +4,9 @@ import { Mails } from "lucide-react";
 
 export function Navigation() {
     return (
-        <nav className="flex items-center justify-between py-8 px-6 md:px-12 max-w-screen-2xl mx-auto">
+        <nav className="flex items-center justify-between py-4 px-6 md:px-8 md:pr-5 max-w-screen-2xl mx-auto">
 
-            <Link href="/" className="font-mono text-xs md:text-sm tracking-widest uppercase text-stone-500 hover:text-stone-900 transition-colors">
+            <Link href="/" className="font-mono text-s md:text-sm tracking-widest uppercase text-stone-600 hover:text-stone-900 transition-colors">
                 Rik Mantel
             </Link>
 
