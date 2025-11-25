@@ -14,13 +14,13 @@ import { clsx } from "clsx";
             )} */}
 
 export function ChatBar() {
-    const { isOpen } = useChat();
+    const { isOpen, isFooterVisible } = useChat();
     const [isEngaged, setIsEngaged] = useState(false);
 
     return (
         <div className="fixed inset-x-0 bottom-0 z-40 pointer-events-none flex justify-center">
             <AnimatePresence>
-                {!isOpen && (
+                {!isOpen && !isFooterVisible && (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{

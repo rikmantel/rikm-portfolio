@@ -17,6 +17,8 @@ interface ChatContextType {
     inputValue: string;
     setInputValue: (value: string) => void;
     sendMessage: (content: string) => Promise<void>;
+    isFooterVisible: boolean;
+    setIsFooterVisible: (visible: boolean) => void;
 }
 
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
@@ -26,6 +28,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [inputValue, setInputValue] = useState("");
+    const [isFooterVisible, setIsFooterVisible] = useState(false);
 
     const addMessage = (message: Message) => {
         setMessages((prev) => [...prev, message]);
@@ -69,6 +72,8 @@ export function ChatProvider({ children }: { children: ReactNode }) {
                 inputValue,
                 setInputValue,
                 sendMessage,
+                isFooterVisible,
+                setIsFooterVisible,
             }}
         >
             {children}

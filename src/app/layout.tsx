@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 
 import { Providers } from "@/components/Providers";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -44,6 +45,7 @@ export default function RootLayout({
           <main className="min-h-screen pb-32">
             {children}
           </main>
+          <Footer />
         </Providers>
       </body>
     </html>
